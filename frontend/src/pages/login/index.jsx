@@ -1,7 +1,11 @@
 import React from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { FaSignInAlt } from 'react-icons/fa';
 import { useState } from 'react';
+import { reset, login } from '../../features/authSlice/authSlice';
+import { useEffect } from 'react';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +13,21 @@ const Login = () => {
     password: '',
   });
   const { email, password } = formData;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { user, isLoading, isError, isSuccess, message } = useSelector(
+    (state) => state.auth
+  );
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message);
+    }
+    if (user || isSuccess) {
+      navigate('/');
+    }
+    dispatch(reset());
+  }, [user, isError, isSuccess, message, dispatch]);
   // Function to handle onChange
   const handleChange = (e) => {
     setFormData((prevState) => ({
@@ -19,7 +38,16 @@ const Login = () => {
   // Function to handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!email || !password) {
+      toast.error('All Fields are required');
+    }
+    const userData = { email, password };
+    dispatch(login(userData));
+    setFormData({ email: '', password: '' });
   };
+  if (isLoading) {
+    return 'Loading...';
+  }
   return (
     <section className='register-container'>
       <h1>
