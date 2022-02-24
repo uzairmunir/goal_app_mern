@@ -38,3 +38,14 @@ nav > ul > li > a:hover {
   color: blue;
   transition: 0.3s ease-in-out;
 }
+.logout-btn {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  color: white;
+  border: 0;
+  outline: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}

@@ -52,7 +52,7 @@ const loginUser = asyncHandler(async (req, res) => {
       token: generateJWT(user._id),
     });
   } else {
-    res.json({ msg: 'Invalid Credentials' });
+    res.status(400).json({ msg: 'Invalid Credentials' });
   }
 });
 
