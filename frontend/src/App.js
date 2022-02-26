@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar';
 import { useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import GoalForm from './components/goal/GoalForm';
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
@@ -19,6 +20,7 @@ const App = () => {
           <Route path='/' element={user ? <Dashboard /> : <Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
+          <Route path='/creategoal' element={user ? <GoalForm /> : <Login />} />
         </Routes>
       </Router>
       <ToastContainer />

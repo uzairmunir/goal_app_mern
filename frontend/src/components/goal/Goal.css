@@ -1,0 +1,84 @@
+.goal-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.goal-form-container > h1 {
+  color: #333;
+  font-style: italic;
+}
+.goal-form-container > form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 2rem 0;
+}
+form > input {
+  width: 100%;
+  padding: 1rem 1rem;
+  border: 1px solid gray;
+  border-radius: 0.3rem;
+}
+form > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333;
+  padding: 0.7rem 1rem;
+  color: white;
+  border: 0;
+  outline: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+input:focus {
+  outline: none;
+}
+.goal-items {
+  background-color: #efefef;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.3rem;
+  border-radius: 0.5rem;
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px; */
+}
+.goal-items > p {
+  color: crimson;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  padding: 0.5rem;
+}
+.goal-items > h3 {
+  color: #333;
+  padding: 0.5rem;
+  font-size: 2rem;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.goal-items > button {
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  padding: 0.7rem 1rem;
+  color: white;
+  border: 0;
+  outline: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+@media screen and (max-width: 770px) {
+  .goal-form-container {
+    width: 90%;
+  }
+  form {
+    width: 90%;
+  }
+}

@@ -67,6 +67,6 @@ form {
 @media (max-width: 770px) {
   .register-container {
     width: 80%;
-    padding: 0;
+    padding: 0.5rem;
   }
 }

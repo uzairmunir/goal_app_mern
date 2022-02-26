@@ -6,6 +6,7 @@ import { FaSignInAlt } from 'react-icons/fa';
 import { useState } from 'react';
 import { reset, login } from '../../features/authSlice/authSlice';
 import { useEffect } from 'react';
+import Spinner from '../../components/spinner/index';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -46,7 +47,7 @@ const Login = () => {
     setFormData({ email: '', password: '' });
   };
   if (isLoading) {
-    return 'Loading...';
+    return <Spinner />;
   }
   return (
     <section className='register-container'>
